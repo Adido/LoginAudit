@@ -10,7 +10,7 @@ class IndexManagerController extends modExtraManagerController {
     public static function getDefaultController() { return 'workspace'; }
 }
 
-abstract class FormzBaseManagerController extends modManagerController {
+abstract class LoginAuditBaseManagerController extends modManagerController {
     /** @var LoginAudit $loginaudit */
     public $loginaudit;
 
