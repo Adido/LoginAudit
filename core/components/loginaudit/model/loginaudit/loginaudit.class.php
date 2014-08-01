@@ -122,4 +122,13 @@ class LoginAudit {
 		$obj->save();
 		return true;
 	}
+
+	public function getActions() {
+		$q = $this->modx->newQuery('auditLog');
+		$q->select('auditLog.*, User.username');
+		$q->innerJoin('modUser','User','User.id = auditLog.user');
+		$q->sortby('auditLog.id','DESC');
+
+		return $this->modx->getCollection('auditLog', $q);
+	}
 }

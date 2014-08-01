@@ -21,8 +21,8 @@ abstract class LoginAuditBaseManagerController extends modManagerController {
         $this->addJavascript($this->loginaudit->config['jsUrl'] . 'mgr/loginaudit.js');
         $this->addHtml('<script type="text/javascript">
         Ext.onReady(function() {
-            loginaudit.config = ' . $this->modx->toJSON($this->loginaudit->config) . ';
-            loginaudit.config.connector_url = "' . $this->loginaudit->config['connectorUrl'] . '";
+            LoginAudit.config = ' . $this->modx->toJSON($this->loginaudit->config) . ';
+            LoginAudit.config.connector_url = "' . $this->loginaudit->config['connectorUrl'] . '";
         });
         </script>');
 

@@ -15,7 +15,7 @@ class LoginAuditWorkspaceManagerController extends LoginAuditBaseManagerControll
     public function getPageTitle() { return $this->modx->lexicon('loginaudit'); }
 
     public function loadCustomCssJs() {
-        $this->addJavascript($this->loginaudit->config['jsUrl'] . 'mgr/widgets/form/grid.js');
+        $this->addJavascript($this->loginaudit->config['jsUrl'] . 'mgr/widgets/grid.js');
         $this->addJavascript($this->loginaudit->config['jsUrl'] . 'mgr/widgets/home.panel.js');
         $this->addLastJavascript($this->loginaudit->config['jsUrl'] . 'mgr/workspace/index.js');
     }
