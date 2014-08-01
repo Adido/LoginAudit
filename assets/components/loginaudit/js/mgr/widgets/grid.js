@@ -23,7 +23,7 @@ LoginAudit.grid.Forms = function(config) {
             header: _('loginaudit.form.actionDate')
             ,dataIndex: 'actionDate'
         }]
-	    ,buttons: [{
+	    ,tbar: ['->',{
 		    text: 'Export as CSV',
 		    handler: function() {
 			    window.location = LoginAudit.config.connector_url+'?export=1';
