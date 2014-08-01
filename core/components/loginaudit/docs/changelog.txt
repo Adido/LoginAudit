@@ -1,0 +1,5 @@
+Changelog for Login Audit.
+
+LoginAudit 1.0.0 Alpha
+======================
+- Initial release.

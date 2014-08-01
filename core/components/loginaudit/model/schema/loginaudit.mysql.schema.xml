@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="loginaudit" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="loginaudit" version="1.1">
+
+    <object class="auditLog" table="auditLog" extends="xPDOSimpleObject">
+		<field key="user" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+		<field key="actionDate" dbtype="datetime" phptype="datetime" null="false" default="0" />
+        <field key="action" dbtype="enum" phptype="string" precision="'login','logout'" null="false" default="" />
+
+		<aggregate alias="User" class="modUser" local="user" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+</model>
