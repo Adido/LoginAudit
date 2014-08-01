@@ -107,4 +107,19 @@ class LoginAudit {
         $args = func_get_args();
         die(var_dump($args));
     }
+
+	/**
+	 * @param object $user User to log
+	 * @param string $type Action to log (login / logout)
+	 *
+	 * @return bool
+	 */
+	public function logAction($user,$type='login') {
+		$obj = $this->modx->newObject('auditLog');
+		$obj->set('user',$user->id);
+		$obj->set('action',($type == 'login' ? 'login' : 'logout'));
+		$obj->set('actionDate', time());
+		$obj->save();
+		return true;
+	}
 }

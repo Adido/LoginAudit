@@ -5,14 +5,15 @@
  * @package loginaudit
  */
 $corePath = $modx->getOption('loginaudit.core_path', null, $modx->getOption('core_path') . 'components/loginaudit/');
-$modx->lexicon->load('loginaudit:tv');
+require_once $corePath . '/model/loginaudit/loginaudit.class.php';
+$loginaudit = new LoginAudit($modx);
 
 switch ($modx->event->name) {
     case 'OnManagerLogin':
-        return true;
+        return $loginaudit->logAction($user);
         break;
-    case 'OnManagerLogout':
-	    return true;
+    case 'OnBeforeManagerLogout':
+		return $loginaudit->logAction($user,'logout');
         break;
 }
 return;

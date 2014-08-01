@@ -13,7 +13,7 @@ $plugs = array(
         'desc' => 'Record every manager login / logout',
         'events' => array(
             'OnManagerLogin',
-            'OnManagerLogout',
+            'OnBeforeManagerLogout',
         ),
     ),
 );
